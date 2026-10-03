@@ -113,7 +113,11 @@ def init_db():
     conn.close()
 
 # Initialize DB when the module is loaded
-init_db()
+try:
+    init_db()
+    print("Database initialized successfully.")
+except Exception as e:
+    print(f"Warning: DB init error: {e}")
 
 
 def haversine_km(lat1, lon1, lat2, lon2):

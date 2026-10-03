@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Locator</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        crossorigin=""
+    >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-icon">♻</div>
+        <div>
+            <h1>E-Waste Locator</h1>
+            <p>Find verified recycling facilities near you</p>
+        </div>
+    </div>
+    <button id="locateBtn" class="primary-btn">Use My Location</button>
+</header>
+
+<main class="page">
+    <section class="hero">
+        <div>
+            <span class="eyebrow">RESPONSIBLE DISPOSAL</span>
+            <h2>Find the right place for your old electronics.</h2>
+            <p>
+                Search verified e-waste recycling facilities by location and
+                accepted device category.
+            </p>
+        </div>
+        <div class="hero-stat">
+            <strong id="facilityCount">0</strong>
+            <span>verified facilities shown</span>
+        </div>
+    </section>
+
+    <section class="controls card">
+        <div class="field grow">
+            <label for="searchInput">Search</label>
+            <input id="searchInput" type="text"
+                   placeholder="Facility, city, address or category">
+        </div>
+
+        <div class="field">
+            <label for="categorySelect">E-waste type</label>
+            <select id="categorySelect">
+                <option value="">All categories</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="radiusSelect">Radius</label>
+            <select id="radiusSelect">
+                <option value="5">5 km</option>
+                <option value="10" selected>10 km</option>
+                <option value="25">25 km</option>
+                <option value="50">50 km</option>
+            </select>
+        </div>
+
+        <button id="searchBtn" class="primary-btn">Search</button>
+    </section>
+
+    <div id="status" class="status"></div>
+
+    <section class="workspace">
+        <aside class="results card">
+            <div class="section-heading">
+                <div>
+                    <h3>Facilities</h3>
+                    <p id="resultSubtitle">Showing verified facilities</p>
+                </div>
+            </div>
+            <div id="facilityList" class="facility-list"></div>
+        </aside>
+
+        <section class="map-card">
+            <div id="map"></div>
+        </section>
+    </section>
+
+    <section id="detailPanel" class="detail card hidden">
+        <button id="closeDetail" class="close-btn" aria-label="Close">×</button>
+        <div id="detailContent"></div>
+    </section>
+</main>
+
+<footer>
+    <p>
+        College PBL prototype · Data must be verified against authoritative
+        sources before production use.
+    </p>
+</footer>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin="">
+</script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

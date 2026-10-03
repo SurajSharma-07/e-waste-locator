@@ -1,0 +1,16 @@
+PROJECT CREATED FROM THE TWO UPLOADED PBL DOCUMENTS
+
+Core stack:
+HTML + CSS + JavaScript + Python/Flask + MySQL + Leaflet/OpenStreetMap
+
+Important:
+The uploaded documents require certified/verified facility information, but they
+do not provide an actual verified facility dataset. Therefore this project does
+NOT invent certification claims. Demo SQL records are marked Pending and are
+hidden by the application until the team replaces them with genuinely verified
+records.
+
+Team roles reflected:
+01 Surajkumar Sharma - Database
+04 Soham Shetye - Developer
+13 Manas Shukla - Developer
